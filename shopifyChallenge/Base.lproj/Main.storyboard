@@ -6,25 +6,53 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Root View Controller-->
         <scene sceneID="jio-2A-0Au">
             <objects>
-                <tableViewController id="7Z2-HH-VTy" customClass="ViewController" customModule="shopifyChallenge" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="7Z2-HH-VTy" customClass="CollectionsTableViewController" customModule="shopifyChallenge" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Mry-Bq-YFl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="NYj-XO-jec">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" rowHeight="90" id="NYj-XO-jec" customClass="CollectionTableViewCell" customModule="shopifyChallenge" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NYj-XO-jec" id="5c6-T6-T07">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="341" height="89.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MAl-eL-jby">
+                                            <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="90" id="S7C-kb-clo"/>
+                                                <constraint firstAttribute="width" constant="90" id="xcE-rP-dTz"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0yx-Ii-Y6c">
+                                            <rect key="frame" x="98" y="35" width="42" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="MAl-eL-jby" firstAttribute="centerY" secondItem="0yx-Ii-Y6c" secondAttribute="centerY" id="27h-fk-49r"/>
+                                        <constraint firstItem="0yx-Ii-Y6c" firstAttribute="leading" secondItem="MAl-eL-jby" secondAttribute="trailing" constant="8" id="QdE-S9-a3B"/>
+                                        <constraint firstItem="MAl-eL-jby" firstAttribute="leading" secondItem="5c6-T6-T07" secondAttribute="leading" id="c9h-SG-C3z"/>
+                                        <constraint firstItem="MAl-eL-jby" firstAttribute="top" secondItem="5c6-T6-T07" secondAttribute="top" id="fqR-qd-InW"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                <connections>
+                                    <outlet property="collectionThumbnail" destination="MAl-eL-jby" id="5Ni-zx-OGX"/>
+                                    <outlet property="collectionTitle" destination="0yx-Ii-Y6c" id="61P-Zo-P5Y"/>
+                                    <segue destination="lAQ-s1-xsJ" kind="show" identifier="toCollectionDetails" id="oza-XJ-DP3"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -36,7 +64,22 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V5g-QD-rYm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2244" y="-10"/>
+            <point key="canvasLocation" x="-2244" y="-10.344827586206897"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Zw4-G0-EvV">
+            <objects>
+                <viewController id="lAQ-s1-xsJ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RL9-ho-Jzh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="pMo-wi-A8p"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e6O-dw-mmT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1271" y="-10"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Wj3-Yc-brm">

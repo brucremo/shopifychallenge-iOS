@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		9F7283668D5AF102111CDA8B /* Pods_shopifyChallenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4170B40CF46429CD02719C6B /* Pods_shopifyChallenge.framework */; };
+		DF27569B21F414E300E371D5 /* CollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF27569A21F414E300E371D5 /* CollectionTableViewCell.swift */; };
 		DF3FB14A21F0FDD4009F7F05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3FB14921F0FDD4009F7F05 /* AppDelegate.swift */; };
-		DF3FB14C21F0FDD4009F7F05 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3FB14B21F0FDD4009F7F05 /* ViewController.swift */; };
+		DF3FB14C21F0FDD4009F7F05 /* CollectionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3FB14B21F0FDD4009F7F05 /* CollectionsTableViewController.swift */; };
 		DF3FB14F21F0FDD4009F7F05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF3FB14D21F0FDD4009F7F05 /* Main.storyboard */; };
 		DF3FB15121F0FDD5009F7F05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF3FB15021F0FDD5009F7F05 /* Assets.xcassets */; };
 		DF3FB15421F0FDD5009F7F05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF3FB15221F0FDD5009F7F05 /* LaunchScreen.storyboard */; };
@@ -20,9 +21,10 @@
 		4170B40CF46429CD02719C6B /* Pods_shopifyChallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_shopifyChallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		64070F16D92609A8BE8083E7 /* Pods-shopifyChallenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shopifyChallenge.debug.xcconfig"; path = "Pods/Target Support Files/Pods-shopifyChallenge/Pods-shopifyChallenge.debug.xcconfig"; sourceTree = "<group>"; };
 		C39B9BDFC94B9152E865F0B1 /* Pods-shopifyChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shopifyChallenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-shopifyChallenge/Pods-shopifyChallenge.release.xcconfig"; sourceTree = "<group>"; };
+		DF27569A21F414E300E371D5 /* CollectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionTableViewCell.swift; sourceTree = "<group>"; };
 		DF3FB14621F0FDD3009F7F05 /* shopifyChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = shopifyChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF3FB14921F0FDD4009F7F05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DF3FB14B21F0FDD4009F7F05 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DF3FB14B21F0FDD4009F7F05 /* CollectionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionsTableViewController.swift; sourceTree = "<group>"; };
 		DF3FB14E21F0FDD4009F7F05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DF3FB15021F0FDD5009F7F05 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DF3FB15321F0FDD5009F7F05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -81,8 +83,9 @@
 			isa = PBXGroup;
 			children = (
 				DF3FB14921F0FDD4009F7F05 /* AppDelegate.swift */,
-				DF3FB14B21F0FDD4009F7F05 /* ViewController.swift */,
+				DF3FB14B21F0FDD4009F7F05 /* CollectionsTableViewController.swift */,
 				DF61B6C521F111C500FF0D3E /* Collection.swift */,
+				DF27569A21F414E300E371D5 /* CollectionTableViewCell.swift */,
 				DF3FB14D21F0FDD4009F7F05 /* Main.storyboard */,
 				DF3FB15021F0FDD5009F7F05 /* Assets.xcassets */,
 				DF3FB15221F0FDD5009F7F05 /* LaunchScreen.storyboard */,
@@ -214,8 +217,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF61B6C621F111C500FF0D3E /* Collection.swift in Sources */,
-				DF3FB14C21F0FDD4009F7F05 /* ViewController.swift in Sources */,
+				DF3FB14C21F0FDD4009F7F05 /* CollectionsTableViewController.swift in Sources */,
 				DF3FB14A21F0FDD4009F7F05 /* AppDelegate.swift in Sources */,
+				DF27569B21F414E300E371D5 /* CollectionTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
