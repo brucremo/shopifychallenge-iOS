@@ -10,10 +10,6 @@ import Foundation
 
 class Collect : Decodable{
     let collects: [CollectElement]
-    
-    init(collects: [CollectElement]) {
-        self.collects = collects
-    }
 }
 
 class CollectElement : Decodable{
@@ -22,15 +18,4 @@ class CollectElement : Decodable{
     let created_at, updated_at: Date
     let position: Int
     let sort_value: String
-    
-    init(id: Int, collection_id: Int, product_id: Int, featured: Bool, created_at: Date, updated_at: Date, position: Int, sort_value: String) {
-        self.id = id
-        self.collection_id = collection_id
-        self.product_id = product_id
-        self.featured = featured
-        self.created_at = created_at
-        self.updated_at = updated_at
-        self.position = position
-        self.sort_value = sort_value
-    }
 }

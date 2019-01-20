@@ -10,10 +10,14 @@ import UIKit
 
 class CollectionDetailTableViewCell: UITableViewCell {
 
+    // MARK: - Instance Variables
+    
     @IBOutlet weak var productNameLabel: UILabel!
     @IBOutlet weak var inventoryLabel: UILabel!
     @IBOutlet weak var collectionTitleLabel: UILabel!
     @IBOutlet weak var thumbnailImage: UIImageView!
+    
+    // MARK: - Lifecycle
     
     override func awakeFromNib() {
         super.awakeFromNib()

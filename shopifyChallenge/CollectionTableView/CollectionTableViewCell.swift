@@ -10,8 +10,12 @@ import UIKit
 
 class CollectionTableViewCell: UITableViewCell {
     
+    // MARK: - Instance Variables
+    
     @IBOutlet weak var collectionTitle: UILabel!
     @IBOutlet weak var collectionThumbnail: UIImageView!
+    
+    // MARK: - Lifecycle
     
     override func awakeFromNib() {
         super.awakeFromNib()

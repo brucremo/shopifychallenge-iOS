@@ -10,10 +10,6 @@ import Foundation
 
 class CustomCollections : Decodable{
     let custom_collections: Array<CustomCollection>
-    
-    init(custom_collections: Array<CustomCollection>) {
-        self.custom_collections = custom_collections
-    }
 }
 
 class CustomCollection : Decodable {
@@ -27,18 +23,4 @@ class CustomCollection : Decodable {
     let published_scope: String
     let admin_graphql_api_id: String
     let image: Image
-    
-    init(id: Int, handle: String, title: String, updated_at: Date, body_html: String, published_at: Date, sort_order: String, template_suffix: String, published_scope: String, admin_graphql_api_id: String, image: Image) {
-        self.id = id
-        self.handle = handle
-        self.title = title
-        self.updated_at = updated_at
-        self.body_html = body_html
-        self.published_at = updated_at
-        self.sort_order = sort_order
-        self.template_suffix = template_suffix
-        self.published_scope = published_scope
-        self.admin_graphql_api_id = admin_graphql_api_id
-        self.image = image
-    }
 }

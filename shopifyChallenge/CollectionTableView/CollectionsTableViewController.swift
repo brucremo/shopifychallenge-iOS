@@ -12,8 +12,12 @@ import AlamofireMapper
 
 class CollectionsTableViewController: UITableViewController {
     
+    // MARK: - Instance Variables
+    
     private var customCollections : CustomCollections?
 
+    // MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,11 +28,13 @@ class CollectionsTableViewController: UITableViewController {
         Alamofire.request("https://shopicruit.myshopify.com/admin/custom_collections.json?page=1&access_token=c32313df0d0ef512ca64d5b336a0d7c6").responseObject { (response: DataResponse<CustomCollections>) in
             
             self.customCollections = response.result.value
+            
+            //Reload table data to display the newly loaded information
             self.tableView.reloadData()
         }
     }
     
-    // MARK: - Table view data source
+    // MARK: - Table View Vethods
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -45,6 +51,7 @@ class CollectionsTableViewController: UITableViewController {
             fatalError("Dequeue error")
         }
         
+        //Configuring the cell
         cell.collectionTitle.text = self.customCollections?.custom_collections[indexPath.row].title
         cell.collectionThumbnail.load(url: URL(string: (self.customCollections?.custom_collections[indexPath.row].image.src)!)!)
         
@@ -67,6 +74,10 @@ class CollectionsTableViewController: UITableViewController {
     }
 }
 
+// MARK: - Extensions
+
+/* From: https://www.hackingwithswift.com/example-code/uikit/how-to-load-a-remote-image-url-into-uiimageview
+   By Paul Hudson, Feb 14th, 2018 */
 extension UIImageView {
     func load(url: URL) {
         DispatchQueue.global().async { [weak self] in
