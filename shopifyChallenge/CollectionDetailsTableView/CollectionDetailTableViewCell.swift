@@ -15,13 +15,17 @@ class CollectionDetailTableViewCell: UITableViewCell {
     @IBOutlet weak var productNameLabel: UILabel!
     @IBOutlet weak var inventoryLabel: UILabel!
     @IBOutlet weak var collectionTitleLabel: UILabel!
-    @IBOutlet weak var thumbnailImage: UIImageView!
+    @IBOutlet weak var productThumbnail: UIImageView!
     
     // MARK: - Lifecycle
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        //Cell customization - productThumbnail
+        productThumbnail.layer.shadowOpacity = 1
+        productThumbnail.layer.shadowRadius = 2
+        productThumbnail.layer.shadowOffset = CGSize(width: 3, height: 3)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

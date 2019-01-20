@@ -41,13 +41,21 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="MAl-eL-jby" firstAttribute="centerY" secondItem="0yx-Ii-Y6c" secondAttribute="centerY" id="27h-fk-49r"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="0yx-Ii-Y6c" secondAttribute="trailing" constant="188.5" id="6SZ-XR-6Gg"/>
                                         <constraint firstItem="0yx-Ii-Y6c" firstAttribute="leading" secondItem="MAl-eL-jby" secondAttribute="trailing" constant="8" id="QdE-S9-a3B"/>
                                         <constraint firstItem="MAl-eL-jby" firstAttribute="leading" secondItem="5c6-T6-T07" secondAttribute="leading" id="c9h-SG-C3z"/>
+                                        <constraint firstItem="0yx-Ii-Y6c" firstAttribute="leading" secondItem="MAl-eL-jby" secondAttribute="trailing" constant="8" id="cja-s6-WhY"/>
                                         <constraint firstItem="MAl-eL-jby" firstAttribute="top" secondItem="5c6-T6-T07" secondAttribute="top" id="fqR-qd-InW"/>
                                     </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="10"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
                                 </tableViewCellContentView>
                                 <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
                                 <connections>
+                                    <outlet property="cellContentView" destination="5c6-T6-T07" id="f9z-vm-umo"/>
                                     <outlet property="collectionThumbnail" destination="MAl-eL-jby" id="5Ni-zx-OGX"/>
                                     <outlet property="collectionTitle" destination="0yx-Ii-Y6c" id="61P-Zo-P5Y"/>
                                     <segue destination="FgW-HU-jXA" kind="show" identifier="toCollectionDetails" id="GMf-4k-pZ2"/>
@@ -129,7 +137,7 @@
                                     <outlet property="collectionTitleLabel" destination="F1n-SY-0jU" id="rY8-iA-KAh"/>
                                     <outlet property="inventoryLabel" destination="CHM-Fz-AMA" id="dWl-95-VoP"/>
                                     <outlet property="productNameLabel" destination="HVE-d5-Wrb" id="Oq8-hB-2fN"/>
-                                    <outlet property="thumbnailImage" destination="NlT-TW-ayO" id="2jL-x0-rL9"/>
+                                    <outlet property="productThumbnail" destination="NlT-TW-ayO" id="wug-Bc-EDN"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

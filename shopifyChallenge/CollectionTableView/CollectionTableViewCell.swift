@@ -12,6 +12,7 @@ class CollectionTableViewCell: UITableViewCell {
     
     // MARK: - Instance Variables
     
+    @IBOutlet var cellContentView: UIView!
     @IBOutlet weak var collectionTitle: UILabel!
     @IBOutlet weak var collectionThumbnail: UIImageView!
     
@@ -19,7 +20,12 @@ class CollectionTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        //Cell customization - collectionThumbnail
+        collectionThumbnail.layer.shadowOpacity = 1
+        collectionThumbnail.layer.shadowRadius = 2
+        collectionThumbnail.layer.shadowOffset = CGSize(width: 3, height: 3)
+
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

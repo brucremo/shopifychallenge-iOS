@@ -92,7 +92,7 @@ class CollectionDetailsTableViewController: UITableViewController {
         cell.inventoryLabel.text = "\(totalInventory) on inventory"
         cell.productNameLabel.text = self.product?.products[indexPath.row].title
         cell.collectionTitleLabel.text = self.collectionTitle
-        cell.thumbnailImage.load(url: URL(string: (self.product?.products[indexPath.row].image.src)!)!)
+        cell.productThumbnail.load(url: URL(string: (self.product?.products[indexPath.row].image.src)!)!)
         
         return cell
     }
