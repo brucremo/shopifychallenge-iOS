@@ -12,7 +12,7 @@ import AlamofireMapper
 
 class CollectionsTableViewController: UITableViewController {
     
-    var customCollections : CustomCollections?
+    private var customCollections : CustomCollections?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +28,7 @@ class CollectionsTableViewController: UITableViewController {
         }
     }
     
-    // MARK: - Table view building
+    // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -40,7 +40,7 @@ class CollectionsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? CollectionTableViewCell else{
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? CollectionTableViewCell else {
             
             fatalError("Dequeue error")
         }
@@ -53,7 +53,17 @@ class CollectionsTableViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        
+        if segue.identifier == "toCollectionDetails" {
+            
+            let viewController = segue.destination as! CollectionDetailsTableViewController
+            
+            let indexPath = tableView.indexPath(for: sender as! UITableViewCell)
+            let selectedData = self.customCollections?.custom_collections
+            
+            viewController.title = selectedData![(indexPath?.row)!].title
+            viewController.collectionID = selectedData![(indexPath?.row)!].id
+            viewController.collectionTitle = selectedData![(indexPath?.row)!].title
+        }
     }
 }
 

@@ -17,20 +17,20 @@ class Collect : Decodable{
 }
 
 class CollectElement : Decodable{
-    let id, collectionID, productID: Int
+    let id, collection_id, product_id: Int
     let featured: Bool
-    let createdAt, updatedAt: Date
+    let created_at, updated_at: Date
     let position: Int
-    let sortValue: String
+    let sort_value: String
     
-    init(id: Int, collectionID: Int, productID: Int, featured: Bool, createdAt: Date, updatedAt: Date, position: Int, sortValue: String) {
+    init(id: Int, collection_id: Int, product_id: Int, featured: Bool, created_at: Date, updated_at: Date, position: Int, sort_value: String) {
         self.id = id
-        self.collectionID = collectionID
-        self.productID = productID
+        self.collection_id = collection_id
+        self.product_id = product_id
         self.featured = featured
-        self.createdAt = createdAt
-        self.updatedAt = updatedAt
+        self.created_at = created_at
+        self.updated_at = updated_at
         self.position = position
-        self.sortValue = sortValue
+        self.sort_value = sort_value
     }
 }

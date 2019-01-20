@@ -22,14 +22,15 @@ class ProductElement : Decodable {
     let created_at: Date
     let handle: String
     let updated_at, published_at: Date
-    let template_suffix: String
+    let template_suffix: String?
     let tags, published_scope, admin_graphql_api_id: String
     let variants: [Variant]
     let options: [Option]
     let images: [Image]
     let image: Image
+    var total_inventory: Int?
     
-    init(id: Int, title: String, body_html: String, vendor: String, product_type: String, created_at: Date, handle: String, updated_at: Date, published_at: Date, template_suffix: String, tags: String, published_scope: String, admin_graphql_api_id: String, variants: [Variant], options: [Option], images: [Image], image: Image) {
+    init(id: Int, title: String, body_html: String, vendor: String, product_type: String, created_at: Date, handle: String, updated_at: Date, published_at: Date, template_suffix: String, tags: String, published_scope: String, admin_graphql_api_id: String, variants: [Variant], options: [Option], images: [Image], image: Image, total_inventory: Int) {
         self.id = id
         self.title = title
         self.body_html = body_html
@@ -47,6 +48,7 @@ class ProductElement : Decodable {
         self.options = options
         self.images = images
         self.image = image
+        self.total_inventory = total_inventory
     }
 }
 
@@ -93,11 +95,11 @@ class Variant : Decodable {
     let id, product_id: Int
     let title, price, sku: String
     let position: Int
-    let inventory_policy: String
-    let compare_at_price: Double
-    let fulfillment_service: String
-    let inventory_management: String
-    let option1, option2, option3: String
+    let inventory_policy: String?
+    let compare_at_price: Double?
+    let fulfillment_service: String?
+    let inventory_management: String?
+    let option1, option2, option3: String?
     let created_at, updated_at: Date
     let taxable: Bool
     let barcode: String?

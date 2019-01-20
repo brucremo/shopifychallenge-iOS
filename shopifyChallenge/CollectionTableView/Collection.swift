@@ -9,9 +9,9 @@
 import Foundation
 
 class CustomCollections : Decodable{
-    let custom_collections: [CustomCollection]
+    let custom_collections: Array<CustomCollection>
     
-    init(custom_collections: [CustomCollection]) {
+    init(custom_collections: Array<CustomCollection>) {
         self.custom_collections = custom_collections
     }
 }
