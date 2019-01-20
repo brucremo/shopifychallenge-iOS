@@ -16,7 +16,7 @@ class CustomCollections : Decodable{
     }
 }
 
-class CustomCollection : Decodable{
+class CustomCollection : Decodable {
     let id: Int
     let handle, title: String
     let updated_at: Date
@@ -40,20 +40,5 @@ class CustomCollection : Decodable{
         self.published_scope = published_scope
         self.admin_graphql_api_id = admin_graphql_api_id
         self.image = image
-    }
-}
-
-class Image : Decodable{
-    let created_at: Date
-    let alt: String?
-    let width, height: Int
-    let src: String
-    
-    init(created_at: Date, alt: String, width: Int, height: Int, src: String) {
-        self.created_at = created_at
-        self.alt = alt
-        self.width = width
-        self.height = height
-        self.src = src
     }
 }
